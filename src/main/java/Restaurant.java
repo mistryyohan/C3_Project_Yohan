@@ -72,7 +72,13 @@ public class Restaurant {
     // method name getOrderValue having a parameter of List of items
     //iterating for each item and getting the price of item using getPrice method in Item class
     // adding the price of each item and returning final Value
-
+    public int getOrderValue(List<Item> items){
+        int totalValue = 0;
+        for (Item item : items) {
+            totalValue = totalValue + item.getPrice();
+        }
+        return totalValue;
+    }
 
 
 }

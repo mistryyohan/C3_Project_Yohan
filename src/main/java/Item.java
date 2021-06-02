@@ -19,4 +19,7 @@ public class Item {
     }
 
     //method name getPrice to return price
+    public int getPrice() {
+        return price;
+    }
 }

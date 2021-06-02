@@ -92,7 +92,7 @@ class RestaurantTest {
         itemSelected = restaurant.getMenu();
         int total = restaurant.getOrderValue(itemSelected);
         int afterTotal = itemSelected.get(1).getPrice();
-        itemSelected.remove(0);
+        itemSelected.remove(1);
         assertEquals(total-afterTotal,restaurant.getOrderValue(itemSelected));
     }
 }
