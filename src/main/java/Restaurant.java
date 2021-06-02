@@ -69,4 +69,10 @@ public class Restaurant {
         this.closingTime = closingTime;
     }
 
+    // method name getOrderValue having a parameter of List of items
+    //iterating for each item and getting the price of item using getPrice method in Item class
+    // adding the price of each item and returning final Value
+
+
+
 }

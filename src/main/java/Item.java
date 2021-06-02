@@ -17,4 +17,6 @@ public class Item {
                 + "\n"
                 ;
     }
+
+    //method name getPrice to return price
 }

@@ -2,6 +2,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -71,4 +73,26 @@ class RestaurantTest {
                 ()->restaurant.removeFromMenu("French fries"));
     }
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+    // Total values of should be equal to addition of all item price ,when all the item are selected
+    @Test
+    public void total_value_should_be_addition_of_all_item_price_when_all_item_of_menu_is_selected(){
+        addRestaurant();
+        List<Item> allItemSelected = new ArrayList<Item>();
+        allItemSelected = restaurant.getMenu();
+        assertEquals(900,restaurant.getOrderValue(allItemSelected));
+    }
+
+    // Total values of should be equal to addition of all item price ,when all the item are selected
+    @Test
+    public void total_value_must_be_reduced_when_an_item_removed(){
+        addRestaurant();
+        List<Item> itemSelected = new ArrayList<Item>();
+        itemSelected = restaurant.getMenu();
+        int total = restaurant.getOrderValue(itemSelected);
+        int afterTotal = itemSelected.get(1).getPrice();
+        itemSelected.remove(0);
+        assertEquals(total-afterTotal,restaurant.getOrderValue(itemSelected));
+    }
 }
